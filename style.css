@@ -84,7 +84,7 @@ body {
   width: 1000px;
   margin: 0 auto;
   margin-top: 0.1rem;
-  background: darkseagreen;
+  background: rgb(218, 243, 218);
   border: 0.2rem solid #171730;
   display: flex;
   flex-direction: column;

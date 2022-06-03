@@ -84,7 +84,7 @@ body {
   width: 1000px;
   margin: 0 auto;
   margin-top: 0.1rem;
-  background: rgb(218, 243, 218);
+  background: white;
   border: 0.2rem solid #171730;
   display: flex;
   flex-direction: column;
@@ -106,61 +106,71 @@ aside {
 
 header {
   position: relative;
-  background: darkslategray;
+  background: #0d4250;
   display: flex;
   flex: 100%;
   width: 100%;
   flex-direction: row;
-  color: lightgreen;
+  color: white;
   /* font-family: serif; */
 }
 .head {
   position: relative;
   display: flex;
   flex-direction: row;
+  padding-block: 1rem;
 }
 .head img {
-  width: 40%;
+  width: 30%;
   max-width: 100%;
   border-radius: 50%;
   flex-direction: row;
   margin: 1.4rem;
-  border: 0.5rem solid lightgreen;
+  border: 0.1rem solid #c5eeeb;
   z-index: 2;
 }
 
 .head h1 {
   position: absolute;
-  border-top: none;
-  border-right: 0.1rem solid lightgreen;
-  border-bottom: 0.5rem solid lightgreen;
-  border-left: 0rem solid lightgreen;
-  border-radius: 20rem;
-  padding: 1.6rem;
+  padding: 1rem;
   display: inline-block;
-  top: 2.3rem;
-  left: 13.9rem;
+  top: 1.3rem;
+  left: 11.9rem;
 }
 .head h2 {
   position: absolute;
-  border-top: none;
-  border-right: 0.1rem solid lightgreen;
-  border-bottom: 0.5rem solid lightgreen;
-  border-left: 0rem solid lightgreen;
-  border-radius: 20rem;
   padding: 1rem 1.6rem;
   display: inline-block;
-  top: 7.65rem;
-  left: 13.9rem;
+  top: 3.65rem;
+  font-size: 1.1rem;
+  color: #6495ed;
+  left: 11.4rem;
+}
+.head em {
+  position: absolute;
+  padding: 1rem 1.6rem;
+  display: inline-block;
+  text-align: start;
+  top: 5.65rem;
+  left: 11.4rem;
+  font-size: 0.7rem;
 }
 
 .contact {
   position: absolute;
+  top: 4rem;
   text-align: left;
   right: -4rem;
 }
+.contact li,
+.contact p {
+  font-size: 0.7rem;
+}
+.contact p {
+  padding: 0.25rem;
+}
 .contact .fa {
-  padding-right: 0.5rem;
+  min-width: 1rem;
   color: cornflowerblue;
 }
 .main {
@@ -172,46 +182,58 @@ header {
   flex: 1 1 70%;
   width: 60%;
   flex-direction: column;
-  background: rgb(196, 207, 228);
+  background: white;
   text-align: left;
   padding: 0.3rem 0.5rem;
 }
 .left img {
   width: 10%;
-  padding-top: 1rem;
   padding-right: 0.5rem;
   display: inline-block;
 }
 .ms {
-  width: 2.4rem !important;
-  height: 2.4rem;
+  width: 1.4rem !important;
+  height: 1.4rem;
 }
-.left ul {
-  padding: 0.5rem;
+.left li {
+  padding-left: 0.5rem;
 }
 .edu,
 .cert,
 .job {
   margin: 0.9rem 0;
   box-shadow: 0px 5px 10px #00471b;
-  padding: 0.2rem 0.5rem;
+  padding: 0.5rem 1.5rem 0.7rem;
 }
 .edu h2,
 .cert h2,
 .job h2 {
-  display: inline-block;
-  background: #00471b;
-  color: lightgreen;
-  margin: 0.9rem 0;
-  padding: 0.5rem 1rem;
-  border-radius: 10rem 1rem;
-  box-shadow: 0px 5px 10px lightgreen;
+  color: #0d4250;
+  font-size: 1rem;
+  margin: 0 0 0.9rem;
+}
+.boxs li {
+  position: relative;
+}
+.boxs li::before {
+  content: "*";
+  padding-right: 0.5rem;
+  position: absolute;
+  top: 60%;
+  left: 1%;
+  transform: translate(-50%, -50%);
 }
 .boxs h3 {
   display: flex;
   align-items: flex-end;
   font-weight: 700;
+  line-height: 0.9;
 }
+.box h3 {
+  line-height: 0.9;
+  padding: 0.2rem;
+}
+
 .box ul {
   display: flex;
   flex-direction: row;
@@ -229,16 +251,19 @@ header {
   flex-direction: column;
   text-align: left;
   padding: 0.5rem;
-  background: darkseagreen;
+  background: #0d4250;
 }
 .right h2 {
   text-align: center;
+  font-size: 1rem;
+  color: #0d4250;
 }
 .right ul {
   padding: 0.27rem;
 }
 .right div {
   margin: 0.9rem 0;
+  background: white;
   box-shadow: 0 5px 10px #00471b;
   padding: 0.2rem;
 }
@@ -249,14 +274,20 @@ header {
   font-weight: 600;
   color: #171730;
 }
-
+.skills li img {
+  width: 9%;
+  margin-left: 0.5rem;
+  max-height: 1.35rem;
+  margin-top: 0.05rem;
+  filter: invert(18%) sepia(31%) saturate(2886%) hue-rotate(116deg) brightness(91%) contrast(101%);
+}
 .skills span {
   width: 1.1rem;
   height: 1.2rem;
   text-align: center;
   color: #171730;
   background: cornflowerblue;
-  border: 0.1rem solid #171730;
+  border: 0.1rem solid #b5b5b8;
   margin-left: 0.1rem;
   margin-top: 0.2rem;
 }
@@ -265,11 +296,16 @@ header {
 }
 .skills .max {
   border: 0.1rem solid blue;
-  color: red;
+  color: 171730;
   background: cornflowerblue;
 }
-
-.skill1,
+.skill li {
+  padding-inline: 1rem;
+}
+.sckil i {
+  min-width: 1rem !important;
+}
+/* .skill1,
 .skill2,
 .skill3 {
   display: flex;
@@ -292,75 +328,26 @@ header {
 .skill3 {
   border: 0.3rem solid #00471b;
   border-right: none;
+} */
+.lang ul {
+  padding: 0.27rem;
 }
 
-.lang1,
-.lang2 {
+.lang1 {
   margin-bottom: 1rem;
+  line-height: 1;
+  padding-inline: 1rem;
 }
 .lang1 span {
-  position: relative;
-  width: 10rem;
-  height: 1rem;
-  margin-left: 0.1rem;
-}
-.lang1 span::before {
-  position: absolute;
-  left: 0;
-  content: "";
-  border: 0.1rem solid green;
-  border-radius: 0.5rem;
-  width: 10rem;
-  height: 1rem;
-  margin-left: 0.1rem;
-}
-.lang1 span::after {
-  position: absolute;
-  left: 0;
-  content: "";
-  background: green;
-  border-radius: 5rem;
-  border: 0.1rem solid green;
-  width: 8rem;
-  height: 1rem;
-  margin-left: 0.1rem;
-}
-.lang2 span {
-  position: relative;
-  width: 10rem;
-  height: 1rem;
-  margin-left: 0.1rem;
-}
-.lang2 span::before {
-  position: absolute;
-  left: 0;
-  content: "";
-  border: 0.1rem solid #171730;
-  border-radius: 0.5rem;
-  width: 10rem;
-  height: 1rem;
-  margin-left: 0.1rem;
-}
-.lang2 span::after {
-  position: absolute;
-  left: 0;
-  content: "";
-  background: #171730;
-  border-radius: 5rem;
-  border: 0.1rem solid #171730;
-  width: 3rem;
-  height: 1rem;
-  margin-left: 0.1rem;
-}
-.hobby li {
-  margin: 1rem auto;
+  display: block;
+  margin-left: 1rem;
 }
 /* fa colors */
 .edu .fa,
 .cert .fa,
 .job .fa {
-  font-size: 1.5rem;
-  color: lightgreen;
+  font-size: 1rem;
+  color: #0d4250;
   margin-right: 0.3rem;
 }
 .edu .fa-free-code-camp,

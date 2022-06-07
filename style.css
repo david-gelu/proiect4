@@ -22,7 +22,7 @@ html {
 h1 {
   display: flex;
   line-height: 1;
-  font-size: 1.7rem;
+  font-size: 3rem;
   padding: 0.5rem 0;
   font-family: "Playfair Display";
 }
@@ -79,8 +79,7 @@ select:focus {
 body {
   font-family: sans-serif;
   color: #171730;
-
-  padding: 0.3rem;
+  padding: 0;
   width: 1000px;
   margin: 0 auto;
   margin-top: 0.1rem;
@@ -95,7 +94,6 @@ img {
 }
 section {
   text-align: center;
-  width: 60%;
   display: flex;
 }
 aside {
@@ -112,67 +110,37 @@ header {
   width: 100%;
   flex-direction: row;
   color: white;
-  /* font-family: serif; */
+  font-family: serif;
 }
-.head {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  padding-block: 1rem;
-}
-.head img {
-  width: 30%;
+
+header img {
+  width: 40%;
   max-width: 100%;
   border-radius: 50%;
-  flex-direction: row;
-  margin: 1.4rem;
+  margin: 1rem;
   border: 0.1rem solid #c5eeeb;
   z-index: 2;
 }
-
-.head h1 {
-  position: absolute;
-  padding: 1rem;
-  display: inline-block;
-  top: 1.3rem;
-  left: 11.9rem;
+.details {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: -6rem;
 }
-.head h2 {
-  position: absolute;
-  padding: 1rem 1.6rem;
-  display: inline-block;
-  top: 3.65rem;
+
+.details h2 {
   font-size: 1.1rem;
+  padding: 0;
   color: #6495ed;
-  left: 11.4rem;
 }
-.head em {
-  position: absolute;
-  padding: 1rem 1.6rem;
-  display: inline-block;
+.details em {
+  padding: 0.5rem 5rem 0 2rem;
   text-align: start;
-  top: 5.65rem;
-  left: 11.4rem;
-  font-size: 0.7rem;
+  font-size: 0.9rem;
+  margin-left: 14%;
 }
 
-.contact {
-  position: absolute;
-  top: 4rem;
-  text-align: left;
-  right: -4rem;
-}
-.contact li,
-.contact p {
-  font-size: 0.7rem;
-}
-.contact p {
-  padding: 0.25rem;
-}
-.contact .fa {
-  min-width: 1rem;
-  color: cornflowerblue;
-}
 .main {
   display: flex;
   flex-direction: row;
@@ -180,11 +148,11 @@ header {
 .left {
   display: flex;
   flex: 1 1 70%;
-  width: 60%;
+  margin-bottom: 1rem;
   flex-direction: column;
   background: white;
   text-align: left;
-  padding: 0.3rem 0.5rem;
+  padding: 0rem 0.5rem;
 }
 .left img {
   width: 10%;
@@ -198,19 +166,19 @@ header {
 .left li {
   padding-left: 0.5rem;
 }
-.edu,
+
 .cert,
 .job {
-  margin: 0.9rem 0;
-  box-shadow: 0px 5px 10px #00471b;
-  padding: 0.5rem 1.5rem 0.7rem;
+  margin: 0.5rem 0 0;
+  box-shadow: 0px 0px 10px #00471b;
+  padding: 0.5rem 1.5rem 1.2rem;
 }
-.edu h2,
+
 .cert h2,
 .job h2 {
   color: #0d4250;
   font-size: 1rem;
-  margin: 0 0 0.9rem;
+  margin: 0.9rem 0;
 }
 .boxs li {
   position: relative;
@@ -234,13 +202,6 @@ header {
   padding: 0.2rem;
 }
 
-.box ul {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  text-align: left;
-  padding: 0 0.2rem;
-}
 .box ul li {
   padding: 0.2rem 1rem;
 }
@@ -250,8 +211,9 @@ header {
   width: 40%;
   flex-direction: column;
   text-align: left;
-  padding: 0.5rem;
-  background: #0d4250;
+  padding-inline: 0.5rem;
+  /* background: #0d4250; */
+  background: #fff;
 }
 .right h2 {
   text-align: center;
@@ -262,17 +224,37 @@ header {
   padding: 0.27rem;
 }
 .right div {
-  margin: 0.9rem 0;
+  margin-bottom: 2rem;
   background: white;
-  box-shadow: 0 5px 10px #00471b;
-  padding: 0.2rem;
+  box-shadow: 0 0px 10px #00471b;
+  padding: 0.5rem 0.2rem;
+}
+.education li {
+  display: flex;
+  align-items: flex-start;
+  font-weight: 600;
+  color: #171730;
+  padding-inline: 1rem;
+}
+.education li img {
+  width: 15%;
+  margin-top: 2.5%;
+  margin-right: 0.5rem;
+}
+.education li i {
+  margin-top: 2%;
+  margin-right: 0.5rem;
 }
 .skills li {
   display: flex;
-  flex-direction: row;
-  margin-top: 1rem;
+  align-items: center;
   font-weight: 600;
   color: #171730;
+  padding-inline: 1rem;
+}
+.skills li h4 {
+  min-width: 35%;
+  max-width: 35%;
 }
 .skills li img {
   width: 9%;
@@ -281,15 +263,18 @@ header {
   margin-top: 0.05rem;
   filter: invert(18%) sepia(31%) saturate(2886%) hue-rotate(116deg) brightness(91%) contrast(101%);
 }
+
+.skills span:last-of-type {
+  margin-right: auto;
+}
+
 .skills span {
-  width: 1.1rem;
-  height: 1.2rem;
-  text-align: center;
-  color: #171730;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
   background: cornflowerblue;
   border: 0.1rem solid #b5b5b8;
   margin-left: 0.1rem;
-  margin-top: 0.2rem;
 }
 .skills .no-color {
   background: transparent;
@@ -299,43 +284,30 @@ header {
   color: 171730;
   background: cornflowerblue;
 }
+
 .skill li {
   padding-inline: 1rem;
 }
-.sckil i {
+.skill i,
+.hobby i {
   min-width: 1rem !important;
 }
-/* .skill1,
-.skill2,
-.skill3 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  margin: 0.5rem auto;
+.contact {
+  margin-top: 0.5rem;
 }
-.skill1 {
-  border: 0.3rem solid green;
-  border-left: none;
+.contact p {
+  font-size: 0.7rem;
+  padding: 0.25rem;
 }
-.skill2 {
-  border: 0.3rem solid #171730;
-  border-bottom: none;
+.contact li {
+  padding-inline: 1rem;
 }
-.skill3 {
-  border: 0.3rem solid #00471b;
-  border-right: none;
-} */
-.lang ul {
-  padding: 0.27rem;
+.contact .fa {
+  min-width: 1rem;
+  color: cornflowerblue;
 }
 
 .lang1 {
-  margin-bottom: 1rem;
-  line-height: 1;
   padding-inline: 1rem;
 }
 .lang1 span {

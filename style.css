@@ -89,9 +89,11 @@ body {
   font-family: sans-serif;
   color: #171730;
   padding: 0;
-  width: 1000px;
+  width: 70dvw;
+  min-height: 100dvh;
   margin: 0 auto;
-  margin-top: 0.1rem;
+  border-radius: .1rem;
+  margin-top: 0.25rem;
   background: white;
   display: flex;
   flex-direction: column;
@@ -384,4 +386,29 @@ header img {
 
 .fa-youtube {
   color: red;
+}
+
+.print-btn {
+  background-color: cornflowerblue;
+  color: #fff;
+  padding-block: .5rem;
+  cursor: pointer;
+}
+
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 0;
+  }
+
+  body {
+    transform-origin: top center;
+    width: 98dvw;
+    max-height: 100dvh;
+  }
+
+  .print-btn {
+    display: none;
+  }
+
 }

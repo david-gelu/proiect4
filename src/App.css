@@ -1,0 +1,461 @@
+/* reset*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+a,
+a:hover,
+a:active,
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Define CSS variables */
+/* :root {
+  --primary-color: #001E2B;
+  --text-color: #dbf5f0;
+  --accent-color: #02fd9d;
+  --light-background: #edf4f3;
+  --dark-text: #242424;
+} */
+
+/* Define CSS variables */
+/* :root {
+  --primary-color: #120F26;
+  --text-color: #897ABF; 
+  --accent-color: #120F26;
+  --light-background: #a7a1bc; 
+  --dark-text: #242424; 
+} */
+/* :root {
+  --primary-color: #011640;
+  --text-color: #F2F2F2; 
+  --accent-color: #426A8C;
+  --light-background: #F2F2F2; 
+  --dark-text: #0D0D0D; 
+} */
+/* :root {
+  --primary-color: #011C26;
+  --text-color: #F2F2F2; 
+  --accent-color: #225C73;
+  --light-background: #BDE3F2; 
+  --dark-text: #0D0D0D; 
+} */
+
+/* :root {
+  --primary-color: #182620;
+  --text-color: #F2F2F2; 
+  --accent-color: #733C30;
+  --light-background: #F2F2F2; 
+  --dark-text: #401505; 
+} */
+/* :root {
+  --primary-color: #1B2B40;
+  --text-color: #bceef5; 
+  --accent-color: #BF5934;
+  --light-background: #F2F2F2; 
+  --dark-text: #00060D; 
+} */
+
+/* :root {
+  --primary-color: #182620;
+  --text-color: #a67563;
+  --accent-color: #733c30;
+  --light-background: #f2f2f2;
+  --dark-text: #401505;
+} */
+
+/* :root {
+  --primary-color: #282B59;
+  --text-color: #7EF2B0;
+  --accent-color: #5D60A6;
+  --light-background: #91F2CF;
+  --dark-text: #0D0D0D;
+} */
+
+/* :root {
+  --primary-color: #202E40;
+  --text-color: #F2F0EB;
+  --accent-color: #176A73;
+  --light-background: #9BB5BF;
+  --dark-text: #0D0D0D;
+} */
+:root {
+  --primary-color: #013440;
+  --text-color: #63f2d8;
+  --accent-color: #04bf9d;
+  --light-background: #dcf2e8;
+  --dark-text: #010326;
+}
+
+html {
+  font-size: 18px;
+  font-family: "Lato", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  background: var(--light-background);
+  width: 100%;
+  height: 100%;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  line-height: 1.1;
+  font-size: 1.3em;
+  padding: 0.5rem 0;
+}
+
+h3 {
+  line-height: 1.6;
+  font-size: 1rem;
+  padding: 0;
+}
+
+ul {
+  line-height: 1.4;
+}
+
+li {
+  line-height: 1.5;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-top: 0.5em;
+}
+
+p {
+  line-height: 1.4;
+  font-size: 0.8rem;
+  padding: 0.5rem 0;
+  text-align: justify;
+}
+
+@media (max-width: 1024px) {
+  html {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 767px) {
+  html {
+    font-size: 16px;
+  }
+
+  @media (min-width: 2200px) {
+  }
+
+  html {
+    font-size: 2vh;
+  }
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  box-sizing: none;
+}
+
+body {
+  color: var(--text-color);
+  padding: 0;
+  width: 70dvw;
+  min-height: 100dvh;
+  margin: 0 auto;
+  border-radius: 0.1rem;
+  margin-top: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--primary-color);
+}
+
+img {
+  display: inline-block;
+  max-width: 100%;
+}
+
+section {
+  display: flex;
+}
+
+aside {
+  flex: 1 1 36%;
+}
+
+/*****************************************/
+
+header {
+  position: relative;
+  background: var(--primary-color);
+  display: flex;
+  align-items: center;
+  flex: 100%;
+  width: 100%;
+  flex-direction: row;
+  color: var(--text-color);
+  padding: 1em;
+}
+
+header .info-img {
+  display: flex;
+  flex: 1 1 20%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header img {
+  width: 50%;
+  aspect-ratio: 1/1;
+  max-width: 100%;
+  border-radius: 50%;
+  border: 0.1rem solid var(--text-color);
+}
+header .image-profile {
+  width: 60%;
+  background-image: url(/assets/poza3.jpg);
+  aspect-ratio: 1 / 1;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  max-width: 100%;
+  border-radius: 50%;
+  border: 0.1rem solid var(--text-color);
+}
+
+header span {
+  margin: 0.5em 0 0;
+  font-size: 1.3rem;
+  /* color: var(--accent-color); */
+}
+
+.details {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 0.9rem;
+  flex: 1 1 70%;
+  & strong {
+    max-width: 85%;
+    letter-spacing: 0.01em;
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  /* border: 4px solid var(--primary-color); */
+}
+
+.left {
+  display: flex;
+  flex: 1 1 70%;
+  gap: 0.5rem;
+  flex-direction: column;
+  background: var(--light-background);
+  text-align: left;
+  color: var(--dark-text);
+  border: 1px solid var(--primary-color);
+}
+
+.left img {
+  max-height: 2em;
+  margin-right: 0.5rem;
+}
+
+.ms {
+  width: 1.4rem !important;
+  height: 1.4rem;
+}
+
+.left li {
+  padding-left: 0.5rem;
+  margin-left: 0.5rem;
+  position: relative;
+  &::before {
+    content: "✓";
+    position: absolute;
+    left: -1rem;
+  }
+}
+
+.cert,
+.job {
+  padding: 0.5rem 1.5rem 1.2rem;
+  outline-offset: -2.2px;
+}
+
+.cert h2,
+.job h2 {
+  color: var(--primary-color);
+  font-size: 1rem;
+}
+
+.boxs {
+  margin-top: 0.5em;
+  h3 {
+    display: flex;
+    align-items: center;
+    line-height: 0.9;
+  }
+}
+
+.box h3 {
+  line-height: 0.9;
+  padding: 0.2rem;
+}
+
+.box ul li {
+  padding: 0.2rem 1rem;
+}
+
+.right {
+  display: flex;
+  flex: 1 1 30%;
+  flex-direction: column;
+  text-align: left;
+  padding-inline: 0.5rem;
+  background: var(--primary-color);
+}
+
+.right h2 {
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+.right div {
+  background: var(--primary-color);
+  color: var(--text-color);
+  padding: 0.5rem 0.2rem;
+}
+li {
+  padding-left: 0.5rem;
+  margin-left: 0.5rem;
+  position: relative;
+}
+
+.education li {
+  padding-left: 0.5em;
+  margin-left: 1em;
+
+  &::before {
+    content: "✓";
+    position: absolute;
+    left: -1em;
+  }
+}
+
+.skills li {
+  padding-left: 0.5em;
+  margin-left: 1em;
+  &::before {
+    content: "✓";
+    position: absolute;
+    left: -1em;
+  }
+}
+
+.skill i,
+.hobby i {
+  margin-inline: 0.5em;
+  min-width: 1rem !important;
+}
+
+.contact li {
+  padding-left: 0;
+  margin-left: 0;
+}
+.contact p {
+  padding: 0.25em 0.25em;
+}
+
+.contact .fa {
+  width: 1.5em;
+  margin-left: -0.25em;
+  margin-right: 0.25em;
+  min-width: 1rem;
+  color: var(--accent-color);
+}
+
+/* fa colors */
+.edu .fa,
+.cert .fa,
+.job .fa {
+  font-size: 1rem;
+  color: var(--primary-color);
+  margin-right: 0.3rem;
+}
+
+.edu .fa-free-code-camp,
+.cert .fa-free-code-camp {
+  color: #00471b;
+}
+
+.print-btn {
+  background-color: var(--text-color);
+  color: var(--primary-color);
+  padding-block: 0.25rem;
+  cursor: pointer;
+  border-radius: 8px;
+  margin: 0;
+}
+
+body.pdf-mode .print-btn {
+  display: none;
+}
+:is(.left, .right) hr {
+  height: 2px;
+  width: 95%;
+  margin-inline: auto;
+  border: none;
+}
+
+.left hr {
+  background-color: var(--primary-color);
+}
+
+.right hr {
+  background-color: var(--text-color);
+}
+
+@media print {
+  @page {
+    margin: 0;
+    size: A4 landscape;
+  }
+
+  body {
+    transform-origin: top center;
+    width: 99dvw;
+    padding: 0.1in;
+  }
+
+  .print-btn {
+    display: none;
+  }
+
+  @page {
+    padding: 0;
+    margin: 0;
+  }
+
+  body {
+    transform-origin: top center;
+    width: 99dvw;
+    padding: 0 0.1in 100%;
+    margin: 0;
+    height: 100%;
+  }
+}

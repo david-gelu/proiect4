@@ -30,6 +30,7 @@ const App = () => {
           pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
         })
         .save()
+        // @ts-ignore: Unreachable code error
         .then(() => {
           document.body.classList.remove('pdf-mode')
           window.location.reload()

@@ -6,26 +6,28 @@ export const contacts = [
   {
     icon: 'fa-mobile',
     text: '+4 0744 598 995',
+    url: 'tel:+40744598995'
   },
   {
     icon: 'fa-envelope-o',
     text: 'david.gelu90@gmail.com',
+    url: 'mailto:david.gelu90@gmail.com'
   },
   {
     icon: 'fa-linkedin-square',
     text: 'in/gelu-fanel-david/',
-    link: 'https://www.linkedin.com/in/gelu-fanel-david/',
+    url: 'https://www.linkedin.com/in/gelu-fanel-david/'
   },
   {
     icon: 'fa-link',
     text: 'davidgelu.netlify.app',
-    link: 'https://davidgelu.netlify.app',
+    url: 'https://davidgelu.netlify.app'
   },
   {
     icon: 'fa-github',
     text: 'github.com/david-gelu',
-    link: 'https://github.com/david-gelu?tab=repositories',
-  },
+    url: 'https://github.com/david-gelu'
+  }
 ]
 
 export const skills = [
@@ -45,7 +47,7 @@ export const skills = [
 export const education = [
   'Introduction to MongoDB',
   'Faculty of Economic Sciences and Business Administration - Marketing - 2022 - Present',
-  'ItSchool Web Design (Front-end) Cours - ANC accreditation',
+  'ItSchool Web Design (Front - end) Cours - ANC accreditation',
   'freeCodeCamp Courses - Online',
   'Udemy Courses - Online',
   'Codecademy Courses - Online',
@@ -115,7 +117,13 @@ export const workExperience = [
   },
 ]
 
-export const certifications = [
+export interface Certification {
+  title: string;
+  items: string[];
+  icon?: string; // Optional icon property
+}
+
+export const certifications: Certification[] = [
   {
     title: 'MongoDB',
     items: ['Introduction to MongoDB (Date: February - 2024)'],

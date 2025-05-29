@@ -1,43 +1,37 @@
-import { useEffect, useRef } from 'react'
-import html2pdf from 'html2pdf.js'
-import './App.css'
-import Box from './Box'
-import Contact from './Contact'
-import Section from './Section'
-import { certifications, contacts, education, languages, personalSkills, skills, workExperience } from './data'
+import { useEffect, useRef } from 'react';
+import { pdf } from '@react-pdf/renderer';
+import './App.css';
+import Box from './Box';
+import Contact from './Contact';
+import Section from './Section';
+import { certifications, contacts, education, languages, personalSkills, skills, workExperience } from './data';
+import PDFDocument from './PDFDocument';
 
 const App = () => {
-  const appRef = useRef<HTMLDivElement>(null)
+  const appRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleBeforePrint = () => {
-      alert("To ensure proper formatting, please enable 'Background graphics' in the print settings.")
-    }
-    window.addEventListener('beforeprint', handleBeforePrint)
-    return () => window.removeEventListener('beforeprint', handleBeforePrint)
-  }, [])
+      alert("To ensure proper formatting, please enable 'Background graphics' in the print settings.");
+    };
+    window.addEventListener('beforeprint', handleBeforePrint);
+    return () => window.removeEventListener('beforeprint', handleBeforePrint);
+  }, []);
 
-  const handleSaveAsPDF = () => {
-    const element = appRef.current
-    if (element) {
-      document.body.classList.add('pdf-mode')
-      html2pdf()
-        .from(element)
-        .set({
-          margin: [0, 0, 0, 0],
-          filename: 'DavidGelu-CV.pdf',
-          html2canvas: { scale: 2 },
-          pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
-        })
-        .save()
-        // @ts-ignore: Unreachable code error
-        .then(() => {
-          document.body.classList.remove('pdf-mode')
-          window.location.reload()
-        })
+  const handleSaveAsPDF = async () => {
+    document.body.classList.add('pdf-mode');
+    try {
+      const blob = await pdf(<PDFDocument />).toBlob();
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'DavidGelu-CV.pdf';
+      link.click();
+      URL.revokeObjectURL(url);
+    } finally {
+      document.body.classList.remove('pdf-mode');
     }
-
-  }
+  };
 
   return (
     <div className="App" ref={appRef}>
@@ -45,7 +39,7 @@ const App = () => {
         <div className="info-img">
           {/* <img src="/assets/poza3.jpg" alt="Profile" /> */}
           <div className='image-profile'> </div>
-          <span>&lt; Web developer &#47;&gt;</span>
+          <span>&lt; Software developer &#47;&gt;</span>
         </div>
         <div className="details">
           <h1>David Gelu-Fanel</h1>
@@ -87,7 +81,7 @@ const App = () => {
         </section>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

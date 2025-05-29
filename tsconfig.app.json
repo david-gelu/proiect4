@@ -26,6 +26,5 @@
   },
   "include": [
     "src",
-    "html2pdf.d.ts"
   ]
 }

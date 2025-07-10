@@ -46,7 +46,7 @@ export const skills = [
 
 export const education = [
   'Introduction to MongoDB',
-  'Faculty of Economic Sciences and Business Administration - Marketing - 2022 - Present',
+  'Faculty of Economic Sciences and Business Administration - Marketing - 2022 - 2025',
   'ItSchool Web Design (Front - end) Cours - ANC accreditation',
   'freeCodeCamp Courses - Online',
   'Udemy Courses - Online',
@@ -68,7 +68,7 @@ export const languages = [
 
 export const workExperience = [
   {
-    title: 'Web Developer - Everseen Limited - 09.2020 - currently',
+    title: 'Software Developer - Everseen Limited - 09.2020 - currently',
     items: [
       'Developed reusable components in a Node.js environment using React, TypeScript, SCSS, Bootstrap, Styled Components, MongoDb, ElasticSearch — ensuring cross-browser compatibility and optimal performance.',
       'Collaborated with UX/UI designers to translate design concepts into functional, user-centric interfaces, driving iterative improvements to enhance the overall user experience.',

@@ -433,28 +433,62 @@ body.pdf-mode .print-btn {
   background-color: var(--text-color);
 }
 
+/* ===== PRINT ===== */
 @media print {
   @page {
     size: A4;
     margin: 0;
   }
 
+  html,
   body {
+    width: 100%;
     margin: 0;
     padding: 0.4in;
-    width: 100%;
-    height: auto;
-
-    /* TEXT FIX */
-    word-break: normal;
-    overflow-wrap: break-word;
-    hyphens: none;
-
+    background: white;
+    color: black;
     font-size: 12px;
     line-height: 1.4;
+
+    /* Oprește despărțirea cuvintelor */
+    hyphens: none;
+    word-break: keep-all;
+    overflow-wrap: normal;
+  }
+
+  * {
+    hyphens: none !important;
+  }
+
+  body {
+    max-width: 100% !important;
   }
 
   .print-btn {
     display: none;
+  }
+
+  .main {
+    display: flex;
+    gap: 16px;
+  }
+
+  .left {
+    flex: 2;
+    background: white;
+  }
+
+  .right {
+    flex: 1;
+    background: #f8f8f8;
+  }
+
+  /* NU RUPE SECȚIUNI */
+  .job,
+  .cert,
+  .education,
+  .skills {
+    page-break-inside: avoid;
+    break-inside: avoid;
   }
 }

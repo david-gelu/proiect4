@@ -89,6 +89,7 @@ Font.register({
   ],
 });
 
+Font.registerHyphenationCallback(word => [word]);
 interface ContactItemProps {
   icon: IconType;
   text: string;
@@ -268,9 +269,8 @@ const PDFDocument = () => {
           <View style={{ ...styles.headerContent, width: '70%' }}>
             <Text style={styles.name}>David Gelu-Fanel</Text>
             <Text style={styles.description}>
-              Dedicated and passionate with a strong commitment to continuous growth, leveraging extensive experience in
-              full-stack technologies including React, Nextjs, NodeJs, MongoDB, JavaScript, TypeScript, HTML, CSS, Scss,
-              Styled - Components and Bootstrap.
+              Full-Stack Developer with 4+ years of experience building scalable web applications using React, Node.js, and TypeScript.
+              Focused on performance optimization, reusable components, and clean architecture.
             </Text>
           </View>
         </View>
@@ -312,7 +312,7 @@ const PDFDocument = () => {
 
             <View style={styles.leftDivider} />
 
-            <View>
+            <View wrap={false}>
               <Text style={styles.leftSectionTitle}>EDUCATION</Text>
               {education.map((item, index) => (
                 <View key={index} style={styles.contactItem}>
@@ -350,7 +350,7 @@ const PDFDocument = () => {
           </View>
 
           <View style={styles.leftSection}>
-            <View>
+            <View wrap={true}>
               <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
                 <Text style={styles.sectionTitle}>WORK EXPERIENCE  </Text>
                 <FontAwesomeIcon

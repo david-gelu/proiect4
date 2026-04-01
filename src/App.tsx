@@ -45,9 +45,8 @@ const App = () => {
           <h1>David Gelu-Fanel</h1>
           <br />
           <strong>
-            Dedicated and passionate with a strong commitment to continuous growth, leveraging extensive experience in
-            full-stack technologies including React, Nextjs, NodeJs, MongoDB, JavaScript, TypeScript, HTML, CSS, Scss,
-            Styled - Components and Bootstrap.
+            Full-Stack Developer with 4+ years of experience building scalable web applications using React, Node.js, and TypeScript.
+            Focused on performance optimization, reusable components, and clean architecture.
           </strong>
         </div>
       </header>

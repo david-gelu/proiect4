@@ -177,6 +177,9 @@ body {
   display: flex;
   flex-direction: column;
   background-color: var(--primary-color);
+  word-break: keep-all;
+  overflow-wrap: normal;
+  hyphens: none;
 }
 
 img {
@@ -432,30 +435,26 @@ body.pdf-mode .print-btn {
 
 @media print {
   @page {
+    size: A4;
     margin: 0;
-    size: A4 landscape;
   }
 
   body {
-    transform-origin: top center;
-    width: 99dvw;
-    padding: 0.1in;
+    margin: 0;
+    padding: 0.4in;
+    width: 100%;
+    height: auto;
+
+    /* TEXT FIX */
+    word-break: normal;
+    overflow-wrap: break-word;
+    hyphens: none;
+
+    font-size: 12px;
+    line-height: 1.4;
   }
 
   .print-btn {
     display: none;
-  }
-
-  @page {
-    padding: 0;
-    margin: 0;
-  }
-
-  body {
-    transform-origin: top center;
-    width: 99dvw;
-    padding: 0 0.1in 100%;
-    margin: 0;
-    height: 100%;
   }
 }

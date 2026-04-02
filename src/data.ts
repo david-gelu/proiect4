@@ -34,18 +34,21 @@ export const skills = [
   'Html',
   'Css / Scss',
   'Bootstrap',
+  'Tailwind',
   'Styled-components',
   'Javascript',
   'React',
   'Typescript',
   'NodeJs',
   'NextJs',
+  'Prisma',
+  'NextAuth',
   'MongoDB',
   'GitHub / Gitlab',
 ]
 
 export const education = [
-  'Bachelor’s Degree – Marketing, Faculty of Economic Sciences and Business Administration (2022 – 2025)',
+  'Bachelor\'s Degree – Marketing, Faculty of Economic Sciences and Business Administration (2022 – 2025)',
   'Introduction to MongoDB – 2024',
   'Front-End Web Design Certification (ANC Accredited) – IT School (2019)',
 ]
@@ -67,49 +70,47 @@ export const workExperience = [
   {
     title: 'Software Developer — Everseen Limited (Sep 2020 – Present)',
     items: [
-      'Developed scalable web applications using React, TypeScript, Node.js, and MongoDB',
-      'Built reusable UI components to improve maintainability and development efficiency',
-      'Optimized rendering and performance to ensure smooth user experience',
-      'Collaborated with UX/UI teams to deliver responsive, user-focused interfaces',
-      'Worked in Agile environment using Jira, Confluence, and GitLab',
+      'Developed and maintained a real-time analytics dashboard using React, TypeScript, Node.js, and MongoDB, serving enterprise clients across multiple regions',
+      'Built and maintained a library of reusable UI components used across the platform, reducing development time and improving consistency',
+      'Optimized rendering performance and front-end load times, contributing to measurably smoother user experience across data-heavy views',
+      'Collaborated closely with UX/UI designers in a cross-functional team of 3–5 developers to deliver responsive, user-focused interfaces',
+      'Worked in an Agile environment using Jira, Confluence, and GitLab — participating in sprint planning and code reviews',
     ],
   },
   {
-    title: 'Head of FASO department - Moemax Ro - 09.2018 - 06.2020',
+    title: 'Head of FASO Department — Moemax Romania (Sep 2018 – Jun 2020)',
     items: [
-      'Optimizing workflows to improve operational efficiency and productivity.',
-      'Ensuring seamless coordination and effective communication for smooth operations.',
-      'Managing inventory with precision, including daily stock checks and price verification.'
+      'Led daily operations for the department, coordinating a team to meet efficiency and productivity targets.',
+      'Streamlined workflows and communication processes, reducing operational bottlenecks.',
+      'Managed inventory with precision, including daily stock checks and price verification.',
     ],
   },
   {
-    title: 'Sales assistant - FASO department - Moemax Ro - 11.2017 - 09.2018',
+    title: 'Sales Assistant — FASO Department, Moemax Romania (Nov 2017 – Sep 2018)',
     items: [
-      'Provided expert customer service, assisting with inquiries and enhancing shopping experiences.',
-      'Optimized product displays to improve accessibility and boost customer engagement.',
-      'Conducted daily stock checks to maintain inventory accuracy and ensure product availability.'
-    ]
-  },
-  {
-    title: 'Sales assistant - Electrical and Garden department - Leroy Merlin - 06.2016 - 11.2017',
-    items: [
-      'Assisted customers by addressing inquiries and recommending suitable products.',
-      'Optimized product displays in Electrical and Garden departments to enhance visibility.',
-      'Conducted daily stock checks to ensure product availability and maintain optimal levels.'
+      'Delivered expert customer service, resolving inquiries and improving overall shopping experience.',
+      'Maintained product displays for accessibility and customer engagement.',
+      'Conducted daily stock checks to ensure accurate inventory levels.',
     ],
   },
   {
-    title: 'Head of Fresh department - Billa Roamnia - 09.2015 - 06.2016',
+    title: 'Sales Assistant — Electrical & Garden Department, Leroy Merlin (Jun 2016 – Nov 2017)',
     items: [
-      'Optimized department operations for maximum efficiency and effectiveness.',
-      'Managed order processing and inventory to maintain stock levels and minimize waste.',
-      'Fostered cross-team communication to ensure smooth workflows and collaboration.'
+      'Assisted customers with product selection across Electrical and Garden departments.',
+      'Maintained product displays and conducted daily stock checks for optimal availability.',
     ],
   },
   {
-    title: 'Trade worker - Billa Roamnia - 04.2015 - 09.2015',
+    title: 'Head of Fresh Department — Billa Romania (Sep 2015 – Jun 2016)',
     items: [
-      'Ensured efficient stocking of shelves, maintained product availability, and provided exceptional customer service through prompt assistance and support.'
+      'Managed department operations, order processing, and inventory to minimize waste and maintain stock levels.',
+      'Coordinated cross-team communication for smooth daily workflows.',
+    ],
+  },
+  {
+    title: 'Trade Worker — Billa Romania (Apr 2015 – Sep 2015)',
+    items: [
+      'Stocked shelves, maintained product availability, and provided customer assistance on the floor.',
     ],
   },
 ]
@@ -117,7 +118,7 @@ export const workExperience = [
 export interface Certification {
   title: string;
   items: string[];
-  icon?: string; // Optional icon property
+  icon?: string;
 }
 
 export const certifications: Certification[] = [

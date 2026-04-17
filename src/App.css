@@ -1,494 +1,349 @@
-/* reset*/
-* {
+/* ── Reset ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
-
 ul,
 ol {
-  list-style-type: none;
+  list-style: none;
 }
-
 a,
 a:hover,
-a:active,
 a:visited {
   text-decoration: none;
   color: inherit;
 }
 
-/* Define CSS variables */
-/* :root {
-  --primary-color: #001E2B;
-  --text-color: #dbf5f0;
-  --accent-color: #02fd9d;
-  --light-background: #edf4f3;
-  --dark-text: #242424;
-} */
-
-/* Define CSS variables */
-/* :root {
-  --primary-color: #120F26;
-  --text-color: #897ABF; 
-  --accent-color: #120F26;
-  --light-background: #a7a1bc; 
-  --dark-text: #242424; 
-} */
-/* :root {
-  --primary-color: #011640;
-  --text-color: #F2F2F2; 
-  --accent-color: #426A8C;
-  --light-background: #F2F2F2; 
-  --dark-text: #0D0D0D; 
-} */
-/* :root {
-  --primary-color: #011C26;
-  --text-color: #F2F2F2; 
-  --accent-color: #225C73;
-  --light-background: #BDE3F2; 
-  --dark-text: #0D0D0D; 
-} */
-
-/* :root {
-  --primary-color: #182620;
-  --text-color: #F2F2F2; 
-  --accent-color: #733C30;
-  --light-background: #F2F2F2; 
-  --dark-text: #401505; 
-} */
-/* :root {
-  --primary-color: #1B2B40;
-  --text-color: #bceef5; 
-  --accent-color: #BF5934;
-  --light-background: #F2F2F2; 
-  --dark-text: #00060D; 
-} */
-
-/* :root {
-  --primary-color: #182620;
-  --text-color: #a67563;
-  --accent-color: #733c30;
-  --light-background: #f2f2f2;
-  --dark-text: #401505;
-} */
-
-/* :root {
-  --primary-color: #282B59;
-  --text-color: #7EF2B0;
-  --accent-color: #5D60A6;
-  --light-background: #91F2CF;
-  --dark-text: #0D0D0D;
-} */
-
-/* :root {
-  --primary-color: #202E40;
-  --text-color: #F2F0EB;
-  --accent-color: #176A73;
-  --light-background: #9BB5BF;
-  --dark-text: #0D0D0D;
-} */
+/* ── Root colors (from mockup) ── */
 :root {
-  --primary-color: #013440;
-  --text-color: #63f2d8;
-  --accent-color: #04bf9d;
-  --light-background: #dcf2e8;
-  --dark-text: #010326;
+  --cv-green: #0d4f47;
+  --cv-green-mid: #1d9e75;
+  --cv-green-light: #5dcaa5;
+  --cv-green-pale: #9fe1cb;
+  --cv-green-bg: #e1f5ee;
+  --cv-green-border: #9fe1cb;
+  --cv-text: #1a1a1a;
+  --cv-text-mid: #2c2c2c;
+  --cv-text-muted: #666;
+  --cv-sidebar-bg: #f7f9f8;
+  --cv-divider: #ebebeb;
+  --cv-border: #e0e0e0;
 }
 
+/* ── Page shell ── */
 html {
-  font-size: 18px;
-  font-family: "Lato", sans-serif;
-  font-weight: 600;
-  font-style: normal;
-  background: var(--light-background);
-  width: 100%;
-  height: 100%;
+  font-size: 16px; /* 1rem = 16px — schimbă doar aici dacă vrei să scalezi tot */
 }
 
-h1 {
-  font-size: 2em;
-}
-
-h2 {
-  line-height: 1.1;
-  font-size: 1.3em;
-  padding: 0.5rem 0;
-}
-
-h3 {
-  line-height: 1.6;
-  font-size: 1rem;
-  padding: 0;
-}
-
-ul {
-  line-height: 1.4;
-}
-
-li {
-  line-height: 1.5;
-  font-size: 0.8rem;
-  font-weight: 500;
-  margin-top: 0.5em;
-}
-
-p {
-  line-height: 1.4;
-  font-size: 0.8rem;
-  padding: 0.5rem 0;
-  text-align: justify;
-}
-
-@media (max-width: 1024px) {
-  html {
-    font-size: 17px;
-  }
-}
-
-@media (max-width: 767px) {
-  html {
-    font-size: 16px;
-  }
-
-  @media (min-width: 2200px) {
-  }
-
-  html {
-    font-size: 2vh;
-  }
-}
-
-input:focus,
-textarea:focus,
-select:focus {
-  outline: none;
-  box-sizing: none;
-}
-
+html,
 body {
-  color: var(--text-color);
-  padding: 0;
-  width: 70dvw;
-  min-height: 100dvh;
-  margin: 0 auto;
-  border-radius: 0.1rem;
-  margin-top: 0.25rem;
-  display: flex;
-  flex-direction: column;
-  background-color: var(--primary-color);
-  word-break: keep-all;
-  overflow-wrap: normal;
-  hyphens: none;
-}
-
-img {
-  display: inline-block;
-  max-width: 100%;
-}
-
-section {
-  display: flex;
-}
-
-aside {
-  flex: 1 1 36%;
-}
-
-/*****************************************/
-
-header {
-  position: relative;
-  background: var(--primary-color);
-  display: flex;
-  align-items: center;
-  flex: 100%;
-  width: 100%;
-  flex-direction: row;
-  color: var(--text-color);
-  padding: 1em;
-}
-
-header .info-img {
-  display: flex;
-  flex: 1 1 20%;
   height: 100%;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+  background: #d8d8d8;
+  font-family: "Lato", sans-serif;
 }
 
-header img {
-  width: 50%;
-  aspect-ratio: 1/1;
-  max-width: 100%;
-  border-radius: 50%;
-  border: 0.1rem solid var(--text-color);
-}
-header .image-profile {
-  width: 60%;
-  background-image: url(/assets/poza3.jpg);
-  aspect-ratio: 1 / 1;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  max-width: 100%;
-  border-radius: 50%;
-  border: 0.1rem solid var(--text-color);
+.cv-page {
+  background: #fff;
+  color: var(--cv-text);
+  max-width: 47.5rem; /* 760px */
+  margin: 2rem auto;
+  border: 0.03125rem solid #ccc; /* 0.5px */
+  border-radius: 0.625rem; /* 10px */
+  overflow: hidden;
+  box-shadow: 0 0.25rem 1.5rem rgba(0, 0, 0, 0.12);
 }
 
-header span {
-  margin: 0.5em 0 0;
-  font-size: 1rem;
-  /* color: var(--accent-color); */
+/* ── Header ── */
+.cv-header {
+  background: var(--cv-green);
+  color: #fff;
+  padding: 1.75rem 2rem 1.5rem; /* 28px 32px 24px */
 }
 
-.details {
+.cv-header__name {
+  font-size: 1.625rem; /* 26px */
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  margin-bottom: 0.25rem; /* 4px */
+}
+
+.cv-header__title {
+  font-size: 0.85rem; /* 13px */
+  color: var(--cv-green-pale);
+  margin-bottom: 1rem; /* 16px */
+  letter-spacing: 0.04em;
+}
+
+.cv-header__summary {
+  font-size: 0.85rem; /* 12px — minimum */
+  line-height: 1.65;
+  color: #d4f0e8;
+  max-width: 36.25rem; /* 580px */
+  margin-bottom: 1rem;
+}
+
+.cv-header__contacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem 1.25rem; /* 6px 20px */
+}
+
+.cv-contact-item {
+  font-size: 0.85rem; /* 12px — minimum */
+  color: var(--cv-green-pale);
   display: flex;
   align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  font-size: 0.9rem;
-  flex: 1 1 70%;
-  & strong {
-    max-width: 85%;
-    letter-spacing: 0.01em;
-  }
+  gap: 0.3125rem; /* 5px */
 }
 
-.main {
+.cv-contact-item a:hover {
+  color: #fff;
+}
+
+.cv-contact-dot {
+  width: 0.25rem; /* 4px */
+  height: 0.25rem;
+  border-radius: 50%;
+  background: var(--cv-green-light);
+  flex-shrink: 0;
+}
+
+/* ── Body grid ── */
+.cv-body {
+  display: grid;
+  grid-template-columns: 12.5rem 1fr; /* 200px 1fr */
+}
+
+/* ── Sidebar ── */
+.cv-sidebar {
+  background: var(--cv-sidebar-bg);
+  padding: 1.25rem 1rem; /* 20px 16px */
+  border-right: 0.03125rem solid var(--cv-border);
+}
+
+/* ── Shared section title ── */
+.cv-section-title {
+  font-size: 0.85rem; /* 12px — minimum */
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cv-green);
+  border-bottom: 0.09375rem solid var(--cv-green); /* 1.5px */
+  padding-bottom: 0.25rem; /* 4px */
+  margin-bottom: 0.625rem; /* 10px */
+}
+
+.cv-sidebar .cv-section-title:first-child {
+  margin-top: 0;
+}
+
+/* ── Skills ── */
+.cv-skill-item {
+  font-size: 0.85rem; /* 12px — minimum */
+  color: var(--cv-text-mid);
+  padding: 0.1875rem 0; /* 3px */
   display: flex;
-  flex-direction: row;
-  min-height: 100vh;
-  /* border: 4px solid var(--primary-color); */
+  align-items: center;
+  gap: 0.375rem; /* 6px */
 }
 
-.left {
-  display: flex;
-  flex: 1 1 70%;
-  gap: 0.5rem;
-  flex-direction: column;
-  background: var(--light-background);
-  text-align: left;
-  color: var(--dark-text);
-  border: 1px solid var(--primary-color);
+.cv-skill-dot {
+  width: 0.3125rem; /* 5px */
+  height: 0.3125rem;
+  border-radius: 50%;
+  background: var(--cv-green);
+  flex-shrink: 0;
 }
 
-.left img {
-  max-height: 2em;
-  margin-right: 0.5rem;
+/* ── Education ── */
+.cv-edu-item {
+  margin-bottom: 0.5rem; /* 8px */
 }
 
-.ms {
-  width: 1.4rem !important;
-  height: 1.4rem;
+.cv-edu-degree {
+  font-size: 0.85rem; /* 12px — minimum */
+  font-weight: 600;
+  color: var(--cv-green);
+  line-height: 1.5;
 }
 
-.left li {
-  padding-left: 0.5rem;
-  margin-left: 0.5rem;
+.cv-edu-school {
+  font-size: 0.85rem; /* 12px — minimum */
+  color: var(--cv-text-mid);
+  line-height: 1.5;
+}
+
+.cv-edu-year {
+  font-size: 0.85rem; /* 12px — minimum */
+  color: #888;
+  line-height: 1.5;
+}
+
+/* ── Certifications ── */
+.cv-cert-group {
+  margin-bottom: 0.5rem; /* 8px */
+}
+
+.cv-cert-title {
+  font-size: 0.85rem; /* 12px — minimum */
+  font-weight: 600;
+  color: var(--cv-green);
+}
+
+.cv-cert-item {
+  font-size: 0.85rem; /* 12px — minimum (era 10.5px, ridicat la min) */
+  color: #444;
+  padding-left: 0.5rem; /* 8px */
+  line-height: 1.5;
+}
+
+/* ── Languages ── */
+.cv-lang-item {
+  font-size: 0.85rem; /* 12px — minimum */
+  color: var(--cv-text-mid);
+  padding: 0.125rem 0; /* 2px */
+}
+
+/* ── Personal skills ── */
+.cv-pskill-item {
+  font-size: 0.85rem; /* 12px — minimum */
+  color: var(--cv-text-mid);
+  padding: 0.125rem 0 0.125rem 0.75rem; /* 2px 0 2px 12px */
   position: relative;
-  &::before {
-    content: "✓";
-    position: absolute;
-    left: -1rem;
-  }
 }
 
-.cert,
-.job {
-  padding: 0.5rem 1.5rem 1.2rem;
-  outline-offset: -2.2px;
+.cv-pskill-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.4375rem; /* 7px */
+  width: 0.25rem; /* 4px */
+  height: 0.25rem;
+  border-radius: 50%;
+  background: var(--cv-green-light);
 }
 
-.cert h2,
-.job h2 {
-  color: var(--primary-color);
-  font-size: 1rem;
+/* ── Main ── */
+.cv-main {
+  padding: 1.25rem 1.5rem; /* 20px 24px */
 }
 
-.boxs {
-  margin-top: 0.5em;
-  h3 {
-    display: flex;
-    align-items: center;
-    line-height: 0.9;
-  }
+/* ── Jobs ── */
+.cv-job {
+  margin-bottom: 1rem; /* 16px */
+  padding-bottom: 1rem;
+  border-bottom: 0.03125rem solid var(--cv-divider);
 }
 
-.box h3 {
-  line-height: 0.9;
-  padding: 0.2rem;
+.cv-job:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
 }
 
-.box ul li {
-  padding: 0.2rem 1rem;
+.cv-job__title {
+  font-size: 0.8125rem; /* 13px — titlu job, ușor mai mare decât minimul */
+  font-weight: 600;
+  color: var(--cv-green);
+  margin-bottom: 0.125rem; /* 2px */
 }
 
-.right {
-  display: flex;
-  flex: 1 1 30%;
-  flex-direction: column;
-  text-align: left;
-  padding-inline: 0.5rem;
-  background: var(--primary-color);
+.cv-job__company {
+  font-size: 0.85rem; /* 12px — minimum */
+  color: var(--cv-text-muted);
+  margin-bottom: 0.375rem; /* 6px */
 }
 
-.right h2 {
-  font-size: 1rem;
-  color: var(--text-color);
-}
-
-.right div {
-  background: var(--primary-color);
-  color: var(--text-color);
-  padding: 0.5rem 0.2rem;
-}
-li {
-  padding-left: 0.5rem;
-  margin-left: 0.5rem;
-  position: relative;
-}
-
-.education li {
-  padding-left: 0.5em;
-  margin-left: 1em;
-
-  &::before {
-    content: "✓";
-    position: absolute;
-    left: -1em;
-  }
-}
-
-.skills li {
-  padding-left: 0.5em;
-  margin-left: 1em;
-  &::before {
-    content: "✓";
-    position: absolute;
-    left: -1em;
-  }
-}
-
-.skill i,
-.hobby i {
-  margin-inline: 0.5em;
-  min-width: 1rem !important;
-}
-
-.contact li {
+.cv-job__bullets {
   padding-left: 0;
-  margin-left: 0;
-}
-.contact p {
-  padding: 0.25em 0.25em;
 }
 
-.contact .fa {
-  width: 1.5em;
-  margin-left: -0.25em;
-  margin-right: 0.25em;
-  min-width: 1rem;
-  color: var(--accent-color);
+.cv-job__bullets li {
+  font-size: 0.85rem; /* 12px — minimum */
+  color: var(--cv-text-mid);
+  line-height: 1.55;
+  padding: 0.125rem 0 0.125rem 0.75rem; /* 2px 0 2px 12px */
+  position: relative;
 }
 
-/* fa colors */
-.edu .fa,
-.cert .fa,
-.job .fa {
-  font-size: 1rem;
-  color: var(--primary-color);
-  margin-right: 0.3rem;
+.cv-job__bullets li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5rem; /* 8px */
+  width: 0.25rem; /* 4px */
+  height: 0.25rem;
+  border-radius: 50%;
+  background: var(--cv-green);
 }
 
-.edu .fa-free-code-camp,
-.cert .fa-free-code-camp {
-  color: #00471b;
+/* ── ATS bar ── */
+.cv-ats-bar {
+  background: var(--cv-green-bg);
+  border-top: 0.03125rem solid var(--cv-green-border);
+  padding: 0.625rem 1.25rem; /* 10px 20px */
+  font-size: 0.85rem; /* 12px — minimum */
+  color: #0f6e56;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1.25rem; /* 8px 20px */
 }
 
-.print-btn {
-  background-color: var(--text-color);
-  color: var(--primary-color);
-  padding-block: 0.25rem;
+.cv-ats-item {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem; /* 4px */
+}
+
+.cv-ats-check {
+  width: 0.875rem; /* 14px */
+  height: 0.875rem;
+  border-radius: 50%;
+  background: var(--cv-green-mid);
+  color: #fff;
+  font-size: 0.5rem; /* 8px */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ── Save button ── */
+.cv-save-btn {
+  margin-left: auto;
+  background: var(--cv-green-bg);
+  color: var(--cv-text-mid);
+  border: none;
+  border-radius: 0.375rem; /* 6px */
+  padding: 0.3125rem 0.75rem; /* 5px 12px */
+  font-size: 0.85rem; /* 12px — minimum */
+  font-weight: 500;
   cursor: pointer;
-  border-radius: 8px;
-  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.3125rem; /* 5px */
+  transition: opacity 0.2s;
 }
 
-body.pdf-mode .print-btn {
+.cv-save-btn:hover {
+  opacity: 0.85;
+}
+
+body.pdf-mode .cv-save-btn {
   display: none;
 }
-:is(.left, .right) hr {
-  height: 2px;
-  width: 95%;
-  margin-inline: auto;
-  border: none;
-}
 
-.left hr {
-  background-color: var(--primary-color);
-}
-
-.right hr {
-  background-color: var(--text-color);
-}
-
-/* ===== PRINT ===== */
-@media print {
-  @page {
-    size: A4;
-    margin: 0;
+/* ── Responsive ── */
+@media (max-width: 37.5rem) {
+  /* 600px */
+  .cv-body {
+    grid-template-columns: 1fr;
   }
-
-  html,
-  body {
-    width: 100%;
-    margin: 0;
-    padding: 0.4in;
-    background: white;
-    color: black;
-    font-size: 12px;
-    line-height: 1.4;
-
-    /* Oprește despărțirea cuvintelor */
-    hyphens: none;
-    word-break: keep-all;
-    overflow-wrap: normal;
-  }
-
-  * {
-    hyphens: none !important;
-  }
-
-  body {
-    max-width: 100% !important;
-  }
-
-  .print-btn {
-    display: none;
-  }
-
-  .main {
-    display: flex;
-    gap: 16px;
-  }
-
-  .left {
-    flex: 2;
-    background: white;
-  }
-
-  .right {
-    flex: 1;
-    background: #f8f8f8;
-  }
-
-  /* NU RUPE SECȚIUNI */
-  .job,
-  .cert,
-  .education,
-  .skills {
-    page-break-inside: avoid;
-    break-inside: avoid;
+  .cv-sidebar {
+    border-right: none;
+    border-bottom: 0.03125rem solid var(--cv-border);
   }
 }

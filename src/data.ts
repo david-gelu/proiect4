@@ -15,7 +15,7 @@ export const contacts = [
   },
   {
     icon: 'fa-linkedin-square',
-    text: 'in/gelu-fanel-david/',
+    text: 'linkedin.com/in/gelu-fanel-david/',
     url: 'https://www.linkedin.com/in/gelu-fanel-david/'
   },
   {
@@ -34,12 +34,15 @@ export const skills = [
   'Html',
   'Css / Scss',
   'Bootstrap',
+  'Shad-cn',
   'Tailwind',
   'Styled-components',
   'Javascript',
   'React',
+  'React-query',
   'Typescript',
   'NodeJs',
+  'Express',
   'NextJs',
   'Prisma',
   'NextAuth',
@@ -70,11 +73,11 @@ export const workExperience = [
   {
     title: 'Software Developer — Everseen Limited (Sep 2020 – Present)',
     items: [
-      'Developed and maintained a real-time analytics dashboard using React, TypeScript, Node.js, and MongoDB, serving enterprise clients across multiple regions',
-      'Built and maintained a library of reusable UI components used across the platform, reducing development time and improving consistency',
-      'Optimized rendering performance and front-end load times, contributing to measurably smoother user experience across data-heavy views',
-      'Collaborated closely with UX/UI designers in a cross-functional team of 3–5 developers to deliver responsive, user-focused interfaces',
-      'Worked in an Agile environment using Jira, Confluence, and GitLab — participating in sprint planning and code reviews',
+      'Developed and maintained a real-time analytics dashboard using React, TypeScript, Node.js, and MongoDB, serving enterprise clients across multiple regions.',
+      'Built and maintained a library of reusable UI components used across the platform, reducing development time and improving consistency.',
+      'Optimized rendering performance and front-end load times, contributing to measurably smoother user experience across data-heavy views.',
+      'Collaborated closely with UX/UI designers in a cross-functional team of 3–5 developers to deliver responsive, user-focused interfaces.',
+      'Worked in an Agile environment using Jira, Confluence, and GitLab — participating in sprint planning and code reviews.',
     ],
   },
   {

@@ -1,9 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { pdf } from '@react-pdf/renderer';
 import './App.css';
-import Box from './Box';
-import Contact from './Contact';
-import Section from './Section';
 import { certifications, contacts, education, languages, personalSkills, skills, workExperience } from './data';
 import PDFDocument from './PDFDocument';
 
@@ -34,50 +31,94 @@ const App = () => {
   };
 
   return (
-    <div className="App" ref={appRef}>
-      <header>
-        <div className="info-img">
-          {/* <img src="/assets/poza3.jpg" alt="Profile" /> */}
-          <div className='image-profile'> </div>
-          <span>&lt; Software developer &#47;&gt;</span>
+    <div className="cv-page" ref={appRef}>
+
+      {/* ── HEADER ── */}
+      <div className="cv-header">
+        <div className="cv-header__name">David Gelu-Fanel</div>
+        <div className="cv-header__title">FULL-STACK DEVELOPER</div>
+        <div className="cv-header__summary">
+          Full-Stack Developer with 4+ years of experience building real-time analytics dashboards
+          and scalable web applications using React, TypeScript, and Node.js. Focused on performance
+          optimization, reusable component systems, and clean architecture. Experienced in Agile
+          teams of 3–6 developers.
         </div>
-        <div className="details">
-          <h1>David Gelu-Fanel</h1>
-          <br />
-          <strong>
-            Full-Stack Developer with 4+ years of experience building scalable web applications using React, Node.js, and TypeScript.
-            Focused on performance optimization, reusable components, and clean architecture.
-          </strong>
+        <div className="cv-header__contacts">
+          {contacts.map((c, i) => (
+            <div className="cv-contact-item" key={i}>
+              <span className="cv-contact-dot" />
+              {c.url
+                ? <a href={c.url} target="_blank" rel="noreferrer">{c.text}</a>
+                : <span>{c.text}</span>
+              }
+            </div>
+          ))}
+          <button className="cv-save-btn print-btn" onClick={handleSaveAsPDF}>
+            Save PDF <i className="fas fa-file-pdf" />
+          </button>
         </div>
-      </header>
-      <div className="main">
-        <section className="right">
-          <button className="print-btn" onClick={handleSaveAsPDF}>Save <i className="fas fa-file-pdf"></i></button>
-          <Contact contacts={contacts} />
-          <hr />
-          <Section className="skills" title="PROFESSIONAL SKILLS" items={skills} />
-          <hr />
-          <Section className="education" title="EDUCATION" items={education} />
-          <hr />
-          <Section className="skill" title="PERSONAL SKILLS" items={personalSkills} />
-          <hr />
-          <Section className="lang" title="LANGUAGES" items={languages} />
-        </section>
-        <section className="left">
-          <div className="job">
-            <h2>WORK EXPERIENCE <i className="fa fa-briefcase" aria-hidden="true"></i></h2>
-            {workExperience.map((job, index) => (
-              <Box key={index} title={job.title} items={job.items} />
-            ))}
+      </div>
+
+      {/* ── BODY ── */}
+      <div className="cv-body">
+
+        {/* SIDEBAR */}
+        <aside className="cv-sidebar">
+          <div className="cv-section-title">Technical Skills</div>
+          {skills.map((skill, i) => (
+            <div className="cv-skill-item" key={i}>
+              <span className="cv-skill-dot" />
+              {skill}
+            </div>
+          ))}
+
+          <div className="cv-section-title" style={{ marginTop: '0.5rem' }}>Education</div>
+          <div className="cv-edu-item">
+            <div className="cv-edu-degree">Bachelor's Degree — Marketing</div>
+            <div className="cv-edu-school">Faculty of Economic Sciences</div>
+            <div className="cv-edu-year">2022 – 2025</div>
           </div>
-          <hr />
-          <div className="cert">
-            <h2>CERTIFICATIONS <i className="fa fa-certificate" aria-hidden="true"></i></h2>
-            {certifications.map((cert, index) => (
-              <Box key={index} title={cert.title} items={cert.items} />
-            ))}
+          <div className="cv-edu-item">
+            <div className="cv-edu-degree">Front-End Web Design</div>
+            <div className="cv-edu-school">ANC Accredited — IT School</div>
+            <div className="cv-edu-year">2019</div>
           </div>
-        </section>
+
+          <div className="cv-section-title">Certifications</div>
+          {certifications.map((cert, i) => (
+            <div className="cv-cert-group" key={i}>
+              <div className="cv-cert-title">{cert.title}</div>
+              {cert.items.map((item, j) => (
+                <div className="cv-cert-item" key={j}>{item}</div>
+              ))}
+            </div>
+          ))}
+
+          <div className="cv-section-title">Languages</div>
+          {languages.map((lang, i) => (
+            <div className="cv-lang-item" key={i}>{lang}</div>
+          ))}
+
+          <div className="cv-section-title">Personal Skills</div>
+          {personalSkills.map((ps, i) => (
+            <div className="cv-pskill-item" key={i}>{ps.skill}</div>
+          ))}
+        </aside>
+
+        {/* MAIN */}
+        <main className="cv-main">
+          <div className="cv-section-title">Work Experience</div>
+          {workExperience.map((job, i) => (
+            <div className="cv-job" key={i}>
+              {/* Split "Role — Company (dates)" into parts */}
+              <div className="cv-job__title">{job.title.split('—')[0].trim()}</div>
+              <div className="cv-job__company">{job.title.split('—').slice(1).join('—').trim()}</div>
+              <ul className="cv-job__bullets">
+                {job.items.map((item, j) => <li key={j}>{item}</li>)}
+              </ul>
+            </div>
+          ))}
+        </main>
       </div>
     </div>
   );
